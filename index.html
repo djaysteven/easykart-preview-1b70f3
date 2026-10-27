@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("pattaya-demo-theme");
+        if (t !== "light" && t !== "dark") t = "dark";
+        document.documentElement.setAttribute("data-theme", t);
+        document.documentElement.style.colorScheme = t;
+      } catch (e) {
+        document.documentElement.setAttribute("data-theme", "dark");
+        document.documentElement.style.colorScheme = "dark";
+      }
+    })();
+  </script>
+  <meta name="color-scheme" content="dark light" />
+  <title>EasyKart Pattaya | Go-Karting at Bali Hai Pier &amp; Thepprasit</title>
+  <meta name="description" content="EasyKart Pattaya — outdoor go-karting at Bali Hai Pier &amp; Thepprasit. Kid, Regular, Fast &amp; 2-Seater karts. Daily 10:00–01:00. | โกคาร์ทพัทยา EasyKart" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Orbitron:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="mesh" aria-hidden="true"></div>
+  <div id="themeLive" class="sr-only" aria-live="polite"></div>
+
+  <header class="site-header" id="header">
+    <div class="container nav">
+      <a href="#top" class="logo" data-i18n-aria="aria.home" aria-label="EasyKart Pattaya home">
+        <img class="logo-img" src="logo.png" width="200" height="37" alt="EasyKart" decoding="async" />
+      </a>
+      <nav class="nav-links" data-i18n-aria="aria.primaryNav" aria-label="Primary">
+        <a href="#tracks" data-i18n="nav.tracks">Tracks</a>
+        <a href="#karts" data-i18n="nav.karts">Karts &amp; Prices</a>
+        <a href="#experience" data-i18n="nav.experience">Experience</a>
+        <a href="#gallery" data-i18n="nav.gallery">Gallery</a>
+        <a href="#faq" data-i18n="nav.faq">FAQ</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+        <a href="compare.html" class="nav-compare" data-i18n="nav.compare">Compare live vs UX upgrade</a>
+      </nav>
+      <div class="header-tools">
+        <div class="theme-switch theme-switch--header" role="group" data-i18n-aria="theme.appearance" aria-label="Appearance">
+          <span class="theme-switch__label" data-i18n="theme.appearance">Appearance</span>
+          <div class="theme-switch__seg" role="presentation">
+            <button type="button" class="theme-btn" data-theme-set="dark" aria-pressed="true" title="Dark" data-i18n-aria="theme.dark" aria-label="Dark">
+              <svg class="theme-btn__icon" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 14.5A8.5 8.5 0 1 1 9.5 3 7 7 0 0 0 21 14.5z"/></svg>
+              <span class="theme-btn__text" data-i18n="theme.dark">Dark</span>
+            </button>
+            <button type="button" class="theme-btn" data-theme-set="light" aria-pressed="false" title="Light" data-i18n-aria="theme.light" aria-label="Light">
+              <svg class="theme-btn__icon" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+              <span class="theme-btn__text" data-i18n="theme.light">Light</span>
+            </button>
+          </div>
+        </div>
+        <div class="lang-switch lang-switch--header" role="group" data-i18n-aria="aria.langSwitch" aria-label="Language">
+          <button type="button" class="lang-btn" data-lang="th" aria-pressed="false" title="ไทย">
+            <span class="flag" aria-hidden="true">🇹🇭</span>
+            <span class="lang-code">TH</span>
+          </button>
+          <button type="button" class="lang-btn" data-lang="en" aria-pressed="true" title="English">
+            <span class="flag" aria-hidden="true">🇬🇧</span>
+            <span class="lang-code">EN</span>
+          </button>
+        </div>
+      </div>
+      <a class="nav-cta" href="#book" data-i18n="nav.book">Book a race</a>
+      <button class="menu-btn" id="menuBtn" data-i18n-aria="aria.menuOpen" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+        <span class="menu-btn__bars" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </span>
+      </button>
+    </div>
+  </header>
+
+  <div class="menu-scrim" id="menuScrim" hidden></div>
+  <aside class="mobile-nav" id="mobileNav" role="dialog" aria-modal="true" data-i18n-aria="aria.menuDialog" aria-label="Menu" hidden>
+    <div class="mobile-nav__inner">
+      <div class="mobile-nav__top">
+        <a href="#top" class="mobile-nav__mark" tabindex="-1" aria-hidden="true">
+          <img src="images/logo-mark.png" width="48" height="36" alt="" decoding="async" />
+        </a>
+        <button type="button" class="mobile-nav__close" id="menuClose" data-i18n="menu.close" data-i18n-aria="aria.menuClose" aria-label="Close menu">Close</button>
+      </div>
+      <nav class="mobile-nav__links" data-i18n-aria="aria.primaryNav" aria-label="Primary">
+        <a class="mobile-nav__link" href="#tracks" data-i18n="nav.tracks">Tracks</a>
+        <a class="mobile-nav__link" href="#karts" data-i18n="nav.karts">Karts &amp; Prices</a>
+        <a class="mobile-nav__link" href="#experience" data-i18n="nav.experience">Experience</a>
+        <a class="mobile-nav__link" href="#gallery" data-i18n="nav.gallery">Gallery</a>
+        <a class="mobile-nav__link" href="#faq" data-i18n="nav.faq">FAQ</a>
+        <a class="mobile-nav__link" href="#contact" data-i18n="nav.contact">Contact</a>
+        <a class="mobile-nav__link" href="#book" data-i18n="nav.book">Book a race</a>
+        <a class="mobile-nav__link" href="compare.html" data-i18n="nav.compare">Compare live vs UX upgrade</a>
+      </nav>
+      <div class="mobile-nav__lang">
+        <div class="lang-switch lang-switch--sheet" role="group" data-i18n-aria="aria.langSwitch" aria-label="Language">
+          <button type="button" class="lang-btn" data-lang="th" aria-pressed="false" title="ไทย">
+            <span class="flag" aria-hidden="true">🇹🇭</span>
+            <span class="lang-code">TH</span>
+          </button>
+          <button type="button" class="lang-btn" data-lang="en" aria-pressed="true" title="English">
+            <span class="flag" aria-hidden="true">🇬🇧</span>
+            <span class="lang-code">EN</span>
+          </button>
+        </div>
+        <div class="theme-switch theme-switch--sheet" role="group" data-i18n-aria="theme.appearance" aria-label="Appearance">
+          <span class="theme-switch__label" data-i18n="theme.appearance">Appearance</span>
+          <div class="theme-switch__seg" role="presentation">
+            <button type="button" class="theme-btn" data-theme-set="dark" aria-pressed="true">
+              <svg class="theme-btn__icon" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 14.5A8.5 8.5 0 1 1 9.5 3 7 7 0 0 0 21 14.5z"/></svg>
+              <span class="theme-btn__text" data-i18n="theme.dark">Dark</span>
+            </button>
+            <button type="button" class="theme-btn" data-theme-set="light" aria-pressed="false">
+              <svg class="theme-btn__icon" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+              <span class="theme-btn__text" data-i18n="theme.light">Light</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="mobile-nav__foot">
+        <a class="mobile-nav__cta" href="#book" data-i18n="nav.bookLong">Book your race</a>
+        <div class="mobile-nav__secondary">
+          <a href="tel:+6633005009">Bali Hai +66 33 005 009</a>
+          <a href="tel:+6633042455">Thepprasit +66 33 042 455</a>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-frame">
+          <div class="hero-video-wrap" aria-hidden="true">
+            <img class="hero-poster" src="images/web-hero-poster-mobile.webp" alt="" width="900" height="1600" decoding="async" />
+            <video
+              id="heroVideo"
+              class="hero-video"
+              muted
+              defaultMuted
+              autoplay
+              loop
+              playsinline
+              webkit-playsinline
+              preload="auto"
+              poster="images/web-hero-poster-mobile.webp"
+            >
+              <source src="videos/hero-easykart-thailand-mobile.mp4" type="video/mp4" media="(max-width: 767.98px)" />
+              <source src="videos/hero-easykart-thailand.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="hero-float float-a glass">
+            <strong data-i18n="float.hoursStrong">Daily 10:00–01:00</strong>
+            <span data-i18n="float.hoursSpan">Two outdoor tracks · walk-in or book online</span>
+          </div>
+          <div class="hero-float float-b glass">
+            <strong data-i18n="float.speedStrong">Up to 70 km/h</strong>
+            <span data-i18n="float.speedSpan">Fast Kart 270cc · live digital timing</span>
+          </div>
+          <div class="hero-content">
+            <div class="hero-copy reveal">
+              <span class="eyebrow"><span class="dot"></span> <span data-i18n="hero.eyebrow">Pattaya · Bali Hai Pier &amp; Thepprasit</span></span>
+              <h1 data-i18n-html="hero.title">Pattaya’s #1<br /><em>Go-Kart Experience</em></h1>
+              <p class="hero-lead" data-i18n="hero.lead">
+                High-speed outdoor racing for families, groups and adrenaline lovers — beginner circuits and technical racing tracks, professional timing, and night racing under full lights.
+              </p>
+              <div class="hero-actions">
+                <a class="btn btn-primary" href="#book" data-i18n="hero.ctaBook">Book a race</a>
+                <a class="btn btn-outline" href="#tracks" data-i18n="hero.ctaTracks" style="color:#f8f4e8;border-color:rgba(248,244,232,0.28)">Choose your track</a>
+                <a class="btn btn-ghost" href="https://easykart.net/book-your-race/" target="_blank" rel="noopener noreferrer" data-i18n="hero.ctaOfficial" style="color:#f8f4e8">Official booking</a>
+              </div>
+              <div class="trust-row">
+                <div class="trust-pill"><strong data-i18n="trust.sinceStrong">Since 2004</strong><span data-i18n="trust.sinceSpan">Thailand’s EasyKart</span></div>
+                <div class="trust-pill"><strong data-i18n="trust.raceStrong">8 min</strong><span data-i18n="trust.raceSpan">per race session</span></div>
+                <div class="trust-pill"><strong data-i18n="trust.everyStrong">Every 10 min</strong><span data-i18n="trust.everySpan">races start</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tracks">
+      <div class="container reveal">
+        <span class="section-label" data-i18n="tracks.label">Choose your track</span>
+        <h2 class="section-title" data-i18n-html="tracks.title">Two outdoor circuits in Pattaya</h2>
+        <p class="section-lead" data-i18n="tracks.lead">Whether you want ocean-side adrenaline by Walking Street or a technical challenge on Thepprasit Road — both locations run daily into the early morning.</p>
+        <div class="tracks-grid">
+          <article class="track-card">
+            <div class="track-card__media">
+              <img src="images/web-bali-track.webp" width="1400" height="933" alt="EasyKart Pattaya Bali Hai Pier track" data-i18n-alt="alt.baliTrack" loading="lazy" decoding="async" />
+            </div>
+            <div class="track-card__body">
+              <h3 data-i18n="bali.title">Bali Hai Pier</h3>
+              <div class="track-meta">
+                <span class="chip" data-i18n="bali.chip1">Beginner 350m</span>
+                <span class="chip" data-i18n="bali.chip2">Racing 800m</span>
+                <span class="chip" data-i18n="bali.chip3">Near Walking Street</span>
+              </div>
+              <p data-i18n="bali.body">High-speed racing by the ocean, steps from Bali Hai Pier and Walking Street. Two distinct tracks for tourists, families, groups and adrenaline lovers — plus panoramic terrace, night lighting, pool table and foosball.</p>
+              <div class="track-card__actions">
+                <a class="btn btn-primary" href="#contact" data-i18n="bali.cta">Location &amp; hours</a>
+                <a class="btn btn-outline" href="tel:+6633005009">+66 33 005 009</a>
+              </div>
+            </div>
+          </article>
+          <article class="track-card">
+            <div class="track-card__media">
+              <img src="images/web-thep-track.webp" width="1400" height="933" alt="EasyKart Pattaya Thepprasit track" data-i18n-alt="alt.thepTrack" loading="lazy" decoding="async" />
+            </div>
+            <div class="track-card__body">
+              <h3 data-i18n="thep.title">Thepprasit Road</h3>
+              <div class="track-meta">
+                <span class="chip" data-i18n="thep.chip1">Beginner 350m</span>
+                <span class="chip" data-i18n="thep.chip2">Racing 900m</span>
+                <span class="chip" data-i18n="thep.chip3">Central Pattaya</span>
+              </div>
+              <p data-i18n="thep.body">The newest racing circuit on Thepprasit Road — built for competitive lap times, precise corners and a more technical drive. Same kart lineup, lounge atmosphere and professional timing.</p>
+              <div class="track-card__actions">
+                <a class="btn btn-primary" href="#contact" data-i18n="thep.cta">Location &amp; hours</a>
+                <a class="btn btn-outline" href="tel:+6633042455">+66 33 042 455</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="why">
+      <div class="container reveal">
+        <span class="section-label" data-i18n="why.label">Why EasyKart Pattaya</span>
+        <h2 class="section-title" data-i18n="why.title">Safe, timed, built for every level</h2>
+        <p class="section-lead" data-i18n="why.lead">Professional timing systems, modern karts and high-performance machines — one of the top things to do in Pattaya for families, groups and adrenaline lovers.</p>
+        <div class="why-grid">
+          <div class="why-card"><strong data-i18n="why.1t">Bali Hai Pier</strong><span data-i18n="why.1b">Near Walking Street — fun and accessible for tourists, families and groups.</span></div>
+          <div class="why-card"><strong data-i18n="why.2t">Thepprasit Road</strong><span data-i18n="why.2b">Newest circuit for precision, competitive laps and a greater driving challenge.</span></div>
+          <div class="why-card"><strong data-i18n="why.3t">Professional timing</strong><span data-i18n="why.3b">Real-time digital lap times — compare performance instantly on screen.</span></div>
+          <div class="why-card"><strong data-i18n="why.4t">For everyone</strong><span data-i18n="why.4b">From kids and families to experienced drivers — karts and formats for every level.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="karts">
+      <div class="container reveal">
+        <span class="section-label" data-i18n="karts.label">Go-kart models</span>
+        <h2 class="section-title" data-i18n="karts.title">Pick your machine</h2>
+        <p class="section-lead" data-i18n="karts.lead">Published package prices from EasyKart. Race = 8 minutes. 3+ races include a free collector T-shirt (while stocks last). Sport shoes mandatory; rentals 50 THB.</p>
+        <div class="karts-grid">
+          <article class="kart-card">
+            <div class="kart-card__media"><img src="images/web-kart-kid.webp" alt="Kid Kart" data-i18n-alt="alt.kartKid" loading="lazy" width="900" height="600" /></div>
+            <div class="kart-card__body">
+              <h3 data-i18n="kart.kid.h">Kid Kart — Junior Star</h3>
+              <div class="kart-specs">
+                <span data-i18n="kart.kid.track">Beginner track</span>
+                <span>25 km/h</span>
+                <span data-i18n="kart.kid.age">Age 7–13</span>
+                <span data-i18n="kart.kid.height">125+ cm</span>
+              </div>
+              <p data-i18n="kart.kid.p">Safe introduction to racing — low-speed tuning and easy handling on the dedicated kid-friendly circuit.</p>
+              <div class="price-row"><span class="price">499 THB</span><span class="price-note" data-i18n="kart.kid.price">1 race</span></div>
+            </div>
+          </article>
+          <article class="kart-card">
+            <div class="kart-card__media"><img src="images/web-kart-regular.webp" alt="Regular Kart" data-i18n-alt="alt.kartRegular" loading="lazy" width="900" height="600" /></div>
+            <div class="kart-card__body">
+              <h3 data-i18n="kart.reg.h">Regular Kart — All-Rounder</h3>
+              <div class="kart-specs">
+                <span data-i18n="kart.reg.track">Beginner track</span>
+                <span>40 km/h</span>
+                <span data-i18n="kart.reg.age">Age 12+</span>
+                <span data-i18n="kart.reg.height">135+ cm</span>
+              </div>
+              <p data-i18n="kart.reg.p">Perfect for adult beginners and teens — comfortable handling and total control for a stress-free first race.</p>
+              <div class="price-row"><span class="price">699 THB</span><span class="price-note" data-i18n="kart.reg.price">1 race · 3 races + free T-shirt</span></div>
+            </div>
+          </article>
+          <article class="kart-card">
+            <div class="kart-card__media"><img src="images/web-kart-fast.webp" alt="Fast Kart" data-i18n-alt="alt.kartFast" loading="lazy" width="900" height="600" /></div>
+            <div class="kart-card__body">
+              <h3 data-i18n="kart.fast.h">Fast Kart — Adrenaline</h3>
+              <div class="kart-specs">
+                <span data-i18n="kart.fast.track">Racing track</span>
+                <span>70 km/h</span>
+                <span>270cc</span>
+                <span data-i18n="kart.fast.age">Age 15+</span>
+                <span data-i18n="kart.fast.height">150+ cm</span>
+              </div>
+              <p data-i18n="kart.fast.p">Built for thrill-seekers — sharp handling and instant acceleration on the long outdoor circuit.</p>
+              <div class="price-row"><span class="price">1,499 THB</span><span class="price-note" data-i18n="kart.fast.price">2 races · 3 races + free T-shirt</span></div>
+            </div>
+          </article>
+          <article class="kart-card">
+            <div class="kart-card__media"><img src="images/web-kart-2seater.webp" alt="2-Seater Kart" data-i18n-alt="alt.kart2" loading="lazy" width="900" height="600" /></div>
+            <div class="kart-card__body">
+              <h3 data-i18n="kart.two.h">2-Seater — Family Thrill</h3>
+              <div class="kart-specs">
+                <span>35 km/h</span>
+                <span data-i18n="kart.two.driver">Driver 20+</span>
+                <span data-i18n="kart.two.kid">Passenger 110+ cm</span>
+              </div>
+              <p data-i18n="kart.two.p">Share the speed with your kid or partner — dual steering wheels; the adult controls the pace.</p>
+              <div class="price-row"><span class="price">699 THB</span><span class="price-note" data-i18n="kart.two.price">1 race</span></div>
+            </div>
+          </article>
+        </div>
+        <div class="cta-strip" style="margin-top:1.5rem">
+          <p><strong data-i18n="karts.flexStrong">Fast check-in &amp; open-time tickets.</strong> <span data-i18n="karts.flex">Book online for faster arrival check-in, or walk in at the counter. Races start every 10 minutes — use tickets anytime during opening hours.</span></p>
+          <a class="btn btn-primary" href="#book" data-i18n="karts.cta">Book now</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="two-col reveal">
+          <div class="two-col__media">
+            <img src="images/web-bali-safety.webp" alt="Safety briefing at EasyKart" data-i18n-alt="alt.safety" loading="lazy" width="1200" height="1500" />
+          </div>
+          <div>
+            <span class="section-label" data-i18n="safety.label">Safety first</span>
+            <h2 class="section-title" data-i18n="safety.title">Professional standards &amp; equipment</h2>
+            <ul class="checklist">
+              <li data-i18n-html="safety.1"><strong>Full-face helmets</strong> in all sizes for every driver</li>
+              <li data-i18n-html="safety.2"><strong>Closed-toe shoes</strong> mandatory — rentals 50 THB with new socks</li>
+              <li data-i18n-html="safety.3"><strong>Racing suits</strong> available free of charge</li>
+              <li data-i18n-html="safety.4"><strong>Remote-controlled safety</strong> — marshals can slow or stop any kart instantly</li>
+              <li data-i18n-html="safety.5"><strong>Mandatory briefing</strong> before each session — rules, controls, track etiquette</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="two-col reveal" style="margin-top:2.5rem">
+          <div>
+            <span class="section-label" data-i18n="lounge.label">More than a track</span>
+            <h2 class="section-title" data-i18n="lounge.title">Timing, terrace &amp; night racing</h2>
+            <ul class="checklist">
+              <li data-i18n-html="lounge.1"><strong>Live digital timing</strong> — compare laps and chase the monthly champions board</li>
+              <li data-i18n-html="lounge.2"><strong>Food &amp; drinks</strong> — snacks, pizzas and refreshments with full track view</li>
+              <li data-i18n-html="lounge.3"><strong>Leisure area</strong> — pool table and foosball between heats</li>
+              <li data-i18n-html="lounge.4"><strong>Night racing</strong> under powerful track lighting after sunset</li>
+              <li data-i18n-html="lounge.5"><strong>Podium celebrations</strong> for heat winners</li>
+            </ul>
+          </div>
+          <div class="two-col__media">
+            <img src="images/web-thep-leisure.webp" alt="EasyKart leisure area" data-i18n-alt="alt.lounge" loading="lazy" width="1200" height="1500" />
+          </div>
+        </div>
+
+        <div class="reveal" style="margin-top:2.5rem">
+          <span class="section-label" data-i18n="groups.label">Groups &amp; events</span>
+          <h2 class="section-title" data-i18n="groups.title">Team building, parties &amp; private Grand Prix</h2>
+          <p class="section-lead" data-i18n="groups.lead">Staff parties, corporate MICE, bachelor/bachelorette parties and birthdays — tailor a racing experience for small groups or large company outings. Who will break the track record?</p>
+          <div class="features-grid">
+            <div class="feature-card"><h3 data-i18n="groups.1t">Personalized help</h3><p data-i18n="groups.1b">Staff help you choose karts and packages by age, experience and group size.</p></div>
+            <div class="feature-card"><h3 data-i18n="groups.2t">Racing tips</h3><p data-i18n="groups.2b">Track guidance on lines, braking points and technique for faster laps.</p></div>
+            <div class="feature-card"><h3 data-i18n="groups.3t">Marshals on watch</h3><p data-i18n="groups.3b">Professional supervision every race — reckless driving not permitted.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="container reveal">
+        <span class="section-label" data-i18n="gallery.label">Gallery</span>
+        <h2 class="section-title" data-i18n="gallery.title">Real tracks. Real nights. Real speed.</h2>
+        <p class="section-lead" data-i18n="gallery.lead">Photos from EasyKart’s live Pattaya pages — Bali Hai Pier and Thepprasit. Retouched for clarity only; no stock or AI places.</p>
+        <div class="gallery-grid">
+          <figure><img src="images/web-bali-all.webp" alt="" loading="lazy" width="1200" height="1500" /><figcaption data-i18n="gal.1">Karting for all · Bali Hai</figcaption></figure>
+          <figure><img src="images/web-bali-family.webp" alt="" loading="lazy" width="1200" height="1500" /><figcaption data-i18n="gal.2">Family experience</figcaption></figure>
+          <figure><img src="images/web-bali-adrenaline.webp" alt="" loading="lazy" width="1200" height="1500" /><figcaption data-i18n="gal.3">Adrenaline lovers</figcaption></figure>
+          <figure><img src="images/web-bali-night.webp" alt="" loading="lazy" width="1200" height="1500" /><figcaption data-i18n="gal.4">Night lighting</figcaption></figure>
+          <figure><img src="images/web-bali-pro.webp" alt="" loading="lazy" width="1200" height="1500" /><figcaption data-i18n="gal.5">Pro track layout</figcaption></figure>
+          <figure><img src="images/web-bali-timing.webp" alt="" loading="lazy" width="1200" height="1500" /><figcaption data-i18n="gal.6">Live timing</figcaption></figure>
+          <figure><img src="images/web-thep-fast.webp" alt="" loading="lazy" width="1200" height="1500" /><figcaption data-i18n="gal.7">Thepprasit fast track</figcaption></figure>
+          <figure><img src="images/web-thep-night.webp" alt="" loading="lazy" width="1200" height="1500" /><figcaption data-i18n="gal.8">Night view · Thepprasit</figcaption></figure>
+          <figure><img src="images/web-thep-2seater.webp" alt="" loading="lazy" width="1200" height="1500" /><figcaption data-i18n="gal.9">2-seater family</figcaption></figure>
+          <figure><img src="images/web-thep-tracks.webp" alt="" loading="lazy" width="1200" height="1500" /><figcaption data-i18n="gal.10">Two tracks · kids &amp; adults</figcaption></figure>
+          <figure><img src="images/web-thep-champ.webp" alt="" loading="lazy" width="1200" height="1500" /><figcaption data-i18n="gal.11">Championship energy</figcaption></figure>
+          <figure><img src="images/web-thep-driver.webp" alt="" loading="lazy" width="1200" height="1500" /><figcaption data-i18n="gal.12">Lap timing pro</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container reveal">
+        <span class="section-label" data-i18n="faq.label">Racing FAQ</span>
+        <h2 class="section-title" data-i18n="faq.title">Everything before you race</h2>
+        <p class="section-lead" data-i18n="faq.lead">Key answers from EasyKart Thailand’s FAQ — prices, bookings, kids, safety and formats. Full FAQ lives on easykart.net.</p>
+        <div class="faq-list">
+          <details class="faq-item"><summary data-i18n="faq.q1">Do I need to book in advance?</summary><p class="faq-a" data-i18n="faq.a1">At EasyKart Pattaya (Bali Hai Pier and Thepprasit) you can walk in during opening hours. Online booking gives faster check-in. Races start every 10 minutes with open-time tickets.</p></details>
+          <details class="faq-item"><summary data-i18n="faq.q2">How long is each race?</summary><p class="faq-a" data-i18n="faq.a2">Each race lasts 8 minutes — about 10 to 15 laps depending on your speed. Multi-race packages are available for a longer session.</p></details>
+          <details class="faq-item"><summary data-i18n="faq.q3">What are the standard prices?</summary><p class="faq-a" data-i18n="faq.a3">Kid Kart from 499 THB (1 race). Regular and 2-Seater from 699 THB (1 race). Fast Kart package from 1,499 THB (2 races). Confirm current packages on the booking page.</p></details>
+          <details class="faq-item"><summary data-i18n="faq.q4">What should I wear?</summary><p class="faq-a" data-i18n="faq.a4">Sport / closed-toe shoes are mandatory. Shoe rental is 50 THB per pair (all sizes, includes new socks). Helmets included; racing suits free if you want the full look.</p></details>
+          <details class="faq-item"><summary data-i18n="faq.q5">Opening hours?</summary><p class="faq-a" data-i18n="faq.a5">Both Pattaya tracks: daily 10:00 – 01:00 (after midnight). Outdoor locations with panoramic viewing areas.</p></details>
+          <details class="faq-item"><summary data-i18n="faq.q6">Where else is EasyKart?</summary><p class="faq-a" data-i18n="faq.a6">EasyKart operates since 2004 across Thailand: Bangkok (RCA Plaza), Pattaya Bali Hai Pier, Pattaya Thepprasit, and Koh Samui (Chaweng Lake).</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container reveal">
+        <span class="section-label" data-i18n="contact.label">Visit &amp; contact</span>
+        <h2 class="section-title" data-i18n="contact.title">Find us in Pattaya</h2>
+        <p class="section-lead" data-i18n="contact.lead">Pick the track closest to where you’re staying — both open late every day.</p>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3 data-i18n="contact.bali.h">EasyKart Pattaya (Bali Hai Pier)</h3>
+            <dl>
+              <div><dt data-i18n="contact.address">Address</dt><dd data-i18n="contact.bali.addr">361/83 Moo 10, Nongprue, Bang Lamung, Chon Buri 20150, Thailand</dd></div>
+              <div><dt data-i18n="contact.phone">Phone</dt><dd><a href="tel:+6633005009">+66 (0)33 005 009</a></dd></div>
+              <div><dt data-i18n="contact.hours">Hours</dt><dd data-i18n="contact.hoursVal">Daily 10:00 – 01:00</dd></div>
+              <div><dt data-i18n="contact.map">Map</dt><dd><a href="https://maps.google.com/?q=EasyKart+Pattaya+Bali+Hai+Pier" target="_blank" rel="noopener noreferrer" data-i18n="contact.openMap">View on Google Maps</a></dd></div>
+            </dl>
+          </div>
+          <div class="contact-card">
+            <h3 data-i18n="contact.thep.h">EasyKart Pattaya (Thepprasit)</h3>
+            <dl>
+              <div><dt data-i18n="contact.address">Address</dt><dd data-i18n="contact.thep.addr">Thepprasit Road, Pattaya City, Chon Buri 20150, Thailand</dd></div>
+              <div><dt data-i18n="contact.phone">Phone</dt><dd><a href="tel:+6633042455">+66 (0)33 042 455</a></dd></div>
+              <div><dt data-i18n="contact.hours">Hours</dt><dd data-i18n="contact.hoursVal">Daily 10:00 – 01:00</dd></div>
+              <div><dt data-i18n="contact.map">Map</dt><dd><a href="https://maps.google.com/?q=EasyKart+Pattaya+Thepprasit" target="_blank" rel="noopener noreferrer" data-i18n="contact.openMap">View on Google Maps</a></dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="book">
+      <div class="container reveal">
+        <div class="book-band">
+          <div>
+            <span class="section-label" data-i18n="book.label">Book your race</span>
+            <h2 class="section-title" data-i18n="book.title">Fast check-in starts here</h2>
+            <p class="section-lead" data-i18n="book.lead">This form is a front-end demo. For live tickets use EasyKart’s official booking — or walk in at either Pattaya track.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="https://easykart.net/book-your-race/" target="_blank" rel="noopener noreferrer" data-i18n="book.official">Official EasyKart booking</a>
+              <a class="btn btn-outline" href="https://easykart.net/faq/" target="_blank" rel="noopener noreferrer" data-i18n="book.faq">Full Racing FAQ</a>
+            </div>
+          </div>
+          <form class="book-form glass-card" id="bookForm" style="padding:1.15rem;border-radius:16px;border:1px solid var(--glass-border)">
+            <label><span data-i18n="form.name">Full name</span><input name="name" required data-i18n-placeholder="form.namePh" placeholder="Your name" /></label>
+            <label><span data-i18n="form.contact">Phone / LINE / email</span><input name="contact" required data-i18n-placeholder="form.contactPh" placeholder="+66 or email" /></label>
+            <label><span data-i18n="form.track">Preferred track</span>
+              <select name="track">
+                <option value="bali" data-i18n="form.optBali">Bali Hai Pier</option>
+                <option value="thep" data-i18n="form.optThep">Thepprasit</option>
+                <option value="either" data-i18n="form.optEither">Either / not sure</option>
+              </select>
+            </label>
+            <label><span data-i18n="form.kart">Kart interest</span>
+              <select name="kart">
+                <option value="kid">Kid Kart</option>
+                <option value="regular">Regular Kart</option>
+                <option value="fast">Fast Kart</option>
+                <option value="2seater">2-Seater</option>
+                <option value="group" data-i18n="form.optGroup">Group / event</option>
+              </select>
+            </label>
+            <label><span data-i18n="form.message">Message</span><textarea name="message" rows="3" data-i18n-placeholder="form.messagePh" placeholder="Preferred day, group size…"></textarea></label>
+            <button class="btn btn-primary" type="submit" data-i18n="form.submit">Send demo inquiry</button>
+            <p class="form-note" data-i18n="form.note">Demo only — not connected to EasyKart’s booking system. Live payments &amp; tickets stay on easykart.net after they invest.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img class="logo-img" src="logo.png" alt="EasyKart" width="180" height="33" />
+        <p data-i18n-html="footer.tagline"><strong>EasyKart Pattaya</strong> — Bali Hai Pier &amp; Thepprasit outdoor go-karting</p>
+        <p class="footer-demo" data-i18n="footer.demo">Front-end demo — bookings/payments not connected; paid back-end after they invest. Content &amp; photos from easykart.net.</p>
+        <a href="compare.html" data-i18n="footer.compare">Compare live vs UX upgrade →</a>
+      </div>
+      <div class="vantage-attr">
+        <img src="images/vantage.png" alt="Vantage" width="120" height="28" />
+        <span><strong>Vantage</strong> <span data-i18n="footer.vantage">— demo redesign by Vantage. Brand mark above is EasyKart; Vantage is agency attribution only.</span></span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="sticky-bar" role="navigation" aria-label="Quick actions">
+    <a class="sticky-call" href="tel:+6633005009" data-i18n="sticky.call">Call</a>
+    <a class="sticky-book" href="#book" data-i18n="sticky.book">Book</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
